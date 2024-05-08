@@ -7,7 +7,7 @@ Ryujinx Master and Ryujinx LDN options are provided on this installer, both vers
 
 Usage:
 Open a terminal, paste <br>
-`bash -c "$(curl -s https://raw.githubusercontent.com/edisionnano/Pine-jinx/main/pinejinx.sh)"` <br>
+`bash -c "$(curl -s https://raw.githubusercontent.com/qwdgbagshfx/Pine-jinx/main/pinejinx.sh)"` <br>
 and hit enter
 
 ## Notes and Warnings
