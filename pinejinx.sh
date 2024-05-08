@@ -51,9 +51,9 @@ removealias() {
 }
 install() {
 	printf "Downloading $version...\n"
-	curl -L "https://github.com/Ryujinx/release-channel-master/releases/download/${version}/ryujinx-${version}-linux_x64.tar.gz" > ryujinx-${version}-linux_x64.tar.gz
+	curl -L "https://github.com/Ryujinx/release-channel-master/releases/download/${version}/ryujinx-${version}-linux_arm64.tar.gz" > ryujinx-${version}-linux_arm64.tar.gz
 	tar -xf ryujinx-${version}-linux_arm64.tar.gz
-	arch_dir=$(tar --exclude='*/*' -tf ryujinx-${version}-linux_x64.tar.gz)
+	arch_dir=$(tar --exclude='*/*' -tf ryujinx-${version}-linux_arm64.tar.gz)
 	if [ -d "$arch_dir" ]; then
 		printf "Extraction successful!\n"
 		mkdir -p /home/${USER}/.local/share/Ryujinx
@@ -62,9 +62,9 @@ install() {
 		printf "Extraction failed!\nAborting...\n"
 		exit
 	fi
-	curl -s -L "https://raw.githubusercontent.com/edisionnano/Pine-jinx/main/Ryujinx.desktop" > Ryujinx.desktop
-	curl -s -L "https://raw.githubusercontent.com/edisionnano/Pine-jinx/main/Ryujinx.png" > Ryujinx.png
-	curl -s -L "https://raw.githubusercontent.com/edisionnano/Pine-jinx/main/Ryujinx.xml" > Ryujinx.xml
+	curl -s -L "https://raw.githubusercontent.com/qwdgbagshfx/Pine-jinx/main/Ryujinx.desktop" > Ryujinx.desktop
+	curl -s -L "https://raw.githubusercontent.com/qwdgbagshfx/Pine-jinx/main/Ryujinx.png" > Ryujinx.png
+	curl -s -L "https://raw.githubusercontent.com/qwdgbagshfx/Pine-jinx/main/Ryujinx.xml" > Ryujinx.xml
 	if [ "$noconfirm" = "1" ]; then
 		:
 	else
@@ -72,7 +72,7 @@ install() {
 	fi
 	if [ "$gamemode" = "y" ] || [ "$gamemode" = "Y" ]; then
 		arg1="gamemoderun "
-		curl -s -L "https://raw.githubusercontent.com/edisionnano/Pine-jinx/main/gamemode.ini" > /home/${USER}/.config/gamemode.ini
+		curl -s -L "https://raw.githubusercontent.com/qwdgbagshfx/Pine-jinx/main/gamemode.ini" > /home/${USER}/.config/gamemode.ini
 	else
 		arg1=""
 	fi
@@ -152,7 +152,7 @@ elif [ "$option" = "3" ]; then
 	uninstall
 	install
 elif [ "$option" = "4" ]; then
-	bash -c "$(curl -s https://raw.githubusercontent.com/edisionnano/Pine-jinx/LDN/pinejinx.sh)"
+	bash -c "$(curl -s https://raw.githubusercontent.com/qwdgbagshfx/Pine-jinx/LDN/pinejinx.sh)"
 else
 	:
 fi
